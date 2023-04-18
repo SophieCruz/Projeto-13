@@ -1,5 +1,5 @@
-var garden,rabbit;
-var gardenImg,rabbitImg;
+var garden,rabbit,apple,orangeL,redL;
+var gardenImg,rabbitImg,carrotImg,orangeImg,redImg;
 
 function preload(){
   gardenImg = loadImage("garden.png");
@@ -27,7 +27,7 @@ rabbit.addImage(rabbitImg);
 function draw() {
   background(0);
 
-rabbit.x=World.mousex;
+rabbit.x=World.mouseX;
   edges= createEdgeSprites();
   rabbit.collide(edges);
 
@@ -49,7 +49,7 @@ function createApples();{
 apple=createApples(random(50,350),40,10,10);
 apple.addImage(appleImg);
 apple.scale=0.07;
-apple.velocity=3;
+apple.velocityY=3;
 apple.lifetime=150;
 
 }
@@ -58,7 +58,7 @@ function createOrange(){
 orangeL=createSprite(random(50,350),40,10,10);
 orangeL.addImage(orangeImg);
 orangeL.scale=0.88;
-orangeL.velocity=3;
+orangeL.velocityY=3;
 orangeL.lifetime=150;
 }
 
@@ -66,6 +66,6 @@ function createRed(){
   redL=createSprite(random(50, 350),40,10,10);
   redL.addImage(redImg);
   redL.scale=0.06;
-  redL.velocity=3;
+  redL.velocityY=3;
   redL.lifetime=150;
 }
